@@ -31,7 +31,7 @@
   {
     "id": 3,
     "name": "bane",
-    "primary_attr": "all",
+    "primary_attr": "universal",
     "attack_type": "Ranged",
     "roles": [
       "Support",
@@ -223,7 +223,7 @@
   {
     "id": 16,
     "name": "sand king",
-    "primary_attr": "all",
+    "primary_attr": "universal",
     "attack_type": "Melee",
     "roles": [
       "Initiator",
@@ -304,7 +304,7 @@
   {
     "id": 21,
     "name": "Windranger",
-    "primary_attr": "all",
+    "primary_attr": "universal",
     "attack_type": "Ranged",
     "roles": [
       "Carry",
@@ -469,7 +469,7 @@
   {
     "id": 33,
     "name": "enigma",
-    "primary_attr": "all",
+    "primary_attr": "universal",
     "attack_type": "Ranged",
     "roles": [
       "Disabler",
@@ -539,7 +539,7 @@
   {
     "id": 38,
     "name": "beastmaster",
-    "primary_attr": "all",
+    "primary_attr": "universal",
     "attack_type": "Melee",
     "roles": [
       "Initiator",
@@ -568,7 +568,7 @@
   {
     "id": 40,
     "name": "venomancer",
-    "primary_attr": "all",
+    "primary_attr": "universal",
     "attack_type": "Ranged",
     "roles": [
       "Support",
@@ -616,7 +616,7 @@
   {
     "id": 43,
     "name": "death prophet",
-    "primary_attr": "all",
+    "primary_attr": "universal",
     "attack_type": "Ranged",
     "roles": [
       "Carry",
@@ -716,7 +716,7 @@
   {
     "id": 50,
     "name": "dazzle",
-    "primary_attr": "all",
+    "primary_attr": "universal",
     "attack_type": "Ranged",
     "roles": [
       "Support",
@@ -761,7 +761,7 @@
   {
     "id": 53,
     "name": "nenature's prophet",
-    "primary_attr": "all",
+    "primary_attr": "universal",
     "attack_type": "Ranged",
     "roles": [
       "Carry",
@@ -934,7 +934,7 @@
   {
     "id": 65,
     "name": "batrider",
-    "primary_attr": "all",
+    "primary_attr": "universal",
     "attack_type": "Ranged",
     "roles": [
       "Initiator",
@@ -961,7 +961,7 @@
   {
     "id": 67,
     "name": "spectre",
-    "primary_attr": "all",
+    "primary_attr": "universal",
     "attack_type": "Melee",
     "roles": [
       "Carry",
@@ -1127,7 +1127,7 @@
   {
     "id": 78,
     "name": "brewmaster",
-    "primary_attr": "all",
+    "primary_attr": "universal",
     "attack_type": "Melee",
     "roles": [
       "Carry",
@@ -1281,7 +1281,7 @@
   {
     "id": 88,
     "name": "nyx assassin",
-    "primary_attr": "all",
+    "primary_attr": "universal",
     "attack_type": "Melee",
     "roles": [
       "Disabler",
@@ -1327,7 +1327,7 @@
   {
     "id": 91,
     "name": "io",
-    "primary_attr": "all",
+    "primary_attr": "universal",
     "attack_type": "Ranged",
     "roles": [
       "Support",
@@ -1341,7 +1341,7 @@
   {
     "id": 92,
     "name": "visage",
-    "primary_attr": "all",
+    "primary_attr": "universal",
     "attack_type": "Ranged",
     "roles": [
       "Support",
@@ -1417,7 +1417,7 @@
   {
     "id": 97,
     "name": "magnus",
-    "primary_attr": "all",
+    "primary_attr": "universal",
     "attack_type": "Melee",
     "roles": [
       "Initiator",
@@ -1489,7 +1489,7 @@
   {
     "id": 102,
     "name": "abaddon",
-    "primary_attr": "all",
+    "primary_attr": "universal",
     "attack_type": "Melee",
     "roles": [
       "Support",
@@ -1534,7 +1534,7 @@
   {
     "id": 105,
     "name": "techies",
-    "primary_attr": "all",
+    "primary_attr": "universal",
     "attack_type": "Ranged",
     "roles": [
       "Nuker",
@@ -1654,7 +1654,7 @@
   {
     "id": 113,
     "name": "arc warden",
-    "primary_attr": "all",
+    "primary_attr": "universal",
     "attack_type": "Ranged",
     "roles": [
       "Carry",
@@ -1698,7 +1698,7 @@
   {
     "id": 120,
     "name": "pangolier",
-    "primary_attr": "all",
+    "primary_attr": "universal",
     "attack_type": "Melee",
     "roles": [
       "Carry",
@@ -1745,7 +1745,7 @@
   {
     "id": 126,
     "name": "void spirit",
-    "primary_attr": "all",
+    "primary_attr": "universal",
     "attack_type": "Melee",
     "roles": [
       "Carry",
@@ -1760,7 +1760,7 @@
   {
     "id": 128,
     "name": "snapfire",
-    "primary_attr": "all",
+    "primary_attr": "universal",
     "attack_type": "Ranged",
     "roles": [
       "Support",
@@ -1818,7 +1818,7 @@
   {
     "id": 136,
     "name": "marci",
-    "primary_attr": "all",
+    "primary_attr": "universal",
     "attack_type": "Melee",
     "roles": [
       "Support",

@@ -1,35 +1,152 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import Heroes from "../public/heroes.json";
+import HeroList from "./component/HeroList";
+import TableClubesHero from "./component/TableClubesHero";
+import style from "./css/App.module.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function HeroGuessGame() {
+  const [guess, setGuess] = useState("");
+  const [answer, setAnswer] = useState(null);
+  const [history, setHistory] = useState([]);
+  const [availableHeroes, setAvailableHeroes] = useState(Heroes);
 
+  const [showModal, setShowModal] = useState(false);
+  const [winnerHero, setWinnerHero] = useState(null);
+
+  const baseURL = "https://cdn.cloudflare.steamstatic.com/";
+
+  const resetGame = () => {
+    const hero = Heroes[Math.floor(Math.random() * Heroes.length)];
+    setAnswer(hero);
+    setHistory([]);
+    setAvailableHeroes(Heroes);
+    setGuess("");
+  };
+
+  useEffect(() => {
+    resetGame();
+  }, []);
+
+  const filterHeroes = availableHeroes.filter((hero) =>
+    hero.name.toLowerCase().includes(guess.toLowerCase())
+  );
+
+  const checkGuess = (e) => {
+    e.preventDefault();
+    if (!guess || !answer) return;
+
+    const guessedHero = Heroes.find(
+      (h) => h.name.toLowerCase() === guess.toLowerCase()
+    );
+    if (!guessedHero) {
+       alert("Hero not found! Please enter a valid hero name.");
+       return; 
+     }
+    const isCorrect = guessedHero && guessedHero.name === answer.name;
+    setHistory((prev) => [
+      ...prev,
+      {
+        hero: guessedHero ? guessedHero : { name: guess, roles: [] },
+        guess: guess,
+      },
+    ]);
+    if (guessedHero) {
+      setAvailableHeroes((prev) =>
+        prev.filter((h) => h.name !== guessedHero.name)
+      );
+    }
+
+    setGuess("");
+
+    if (isCorrect) {
+      setWinnerHero(answer);
+      setShowModal(true);
+    }
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    resetGame();
+  };
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className={style.container}>
+      <div
+        style={{
+          color: "red",
+          textAlign: "center",
+          fontSize: "2rem",
+          fontWeight: "bold",
+          paddingBottom: "1rem",
+        }}
+      >
+        <div className={style.gameTitle}>Guess Heroes Game</div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      {answer && (
+        <div>
+          <div className={style.inputContainer}>
+            <div className={style.inputRow}>
+              <input
+                type="text"
+                placeholder="Type hero name"
+                value={guess}
+                onChange={(e) => setGuess(e.target.value)}
+              />
+              <button
+                className={style.disabled}
+                onClick={checkGuess}
+                disabled={
+                  !Heroes.some(
+                    (h) =>
+                      h.name &&
+                      h.name.toLowerCase() === guess.toLowerCase()
+                  )
+                }
+              >
+                Submit
+              </button>
+            </div>
 
-export default App
+            {/* Filter Hero */}
+            {guess && (
+              <HeroList
+                filterHeroes={filterHeroes}
+                setGuess={setGuess}
+                setFilterHeroes={setAvailableHeroes}
+                baseURL={baseURL}
+              />
+            )}
+            <div className={style.tips}>
+              💡 Tips : This hero has {answer.roles.length} role
+              {answer.roles.length > 1 ? "s" : ""}
+            </div>
+          </div>
+
+          {/* Table history */}
+          <TableClubesHero
+            history={history}
+            baseURL={baseURL}
+            guess={guess}
+            answer={answer}
+          />
+        </div>
+      )}
+      {/* เฉลย */}
+      {showModal && winnerHero && (
+        <div className={style.modalOverlay}>
+          <div className={style.modalContent}>
+            <h2>You Win</h2>
+            <img
+              src={`${baseURL}${winnerHero.icon}`}
+              alt={winnerHero.name}
+              className={style.modalHero}
+            />
+            <p className={style.modalHeroName}>{winnerHero.name}</p>
+            <button className={style.modalButton} onClick={handleCloseModal}>
+              Start New Game
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

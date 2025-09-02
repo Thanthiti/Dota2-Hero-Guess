@@ -1,0 +1,66 @@
+.heroTable {
+  width: 90%; /* ความกว้างตาราง 90% ของหน้าจอ */
+  max-width: 1200px; /* กำหนดความกว้างสูงสุด */
+  margin: 0 auto; /* จัดให้อยู่กลาง */
+  border-collapse: collapse; /* รวมเส้นขอบ */
+  background: linear-gradient(180deg, #1a1c25, #2a2d3a); /* พื้นหลังเข้มแบบไล่สี (Dota feel) */
+  border-radius: 12px; /* มุมโค้งมน */
+  overflow: hidden; /* ตัดส่วนเกินออก */
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6); /* เงาเข้มดูหรู */
+  text-align: center; /* จัดข้อความตรงกลาง */
+  border: 1px solid rgba(255, 215, 0, 0.25); /* ขอบทองอ่อน */
+  margin-bottom: 50px;
+}
+
+.heroTable th {
+  background: linear-gradient(180deg, #3a3d52, #2b2e41); /* พื้นหลังหัวตารางเป็น gradient เข้ม */
+  color: #ffd700; /* ตัวอักษรสีทอง */
+  padding: 14px 18px; /* ระยะห่างใน cell */
+  font-weight: 600; /* ตัวหนา */
+  font-size: 14px; /* ขนาดตัวอักษร */
+  text-transform: uppercase; /* ตัวอักษรเป็นพิมพ์ใหญ่ */
+  letter-spacing: 1px; /* เว้นระยะตัวอักษรเล็กน้อย */
+  text-align: center; /* จัดข้อความตรงกลาง */
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2); /* เส้นขอบล่างเป็นสีทองจาง */
+}
+
+.heroTable td {
+  padding: 12px 16px; /* ระยะห่างในเซลล์ */
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* เส้นคั่นบางๆ สีขาวโปร่ง */
+  font-size: 14px; /* ขนาดตัวอักษร */
+  color: #ccc; /* ตัวอักษรสีเทาอ่อน */
+}
+
+.heroTable tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.03); /* แถวคู่มีสีพื้นหลังอ่อนกว่าเล็กน้อย */
+}
+
+.heroTable tr:hover {
+  background: rgba(255, 215, 0, 0.08); /* เวลา hover แถวเป็นสีทองอ่อน */
+  transition: 0.3s; /* ทำให้การเปลี่ยนสีลื่นไหล */
+}
+
+.heroTable img {
+  border-radius: 6px; /* มุมโค้งเล็กน้อย */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5); /* เงารอบรูป */
+  border: 1px solid rgba(255, 215, 0, 0.2); /* ขอบทองจางรอบรูป */
+}
+
+/* Role Yes: แสดงว่า Hero ใช้ได้ใน Role */
+.roleYes {
+  background-color: rgba(0, 150, 50, 0.2); /* พื้นหลังเขียวหม่น */
+  color: #6cff78; /* ตัวอักษรสีเขียวเรือง */
+  font-weight: bold; /* ตัวหนา */
+  text-align: center; /* จัดตรงกลาง */
+  border-radius: 4px; /* มุมโค้งเล็กน้อย */
+}
+
+/* Role No: แสดงว่า Hero ไม่เหมาะกับ Role */
+.roleNo {
+  background-color: rgba(180, 0, 0, 0.2); /* พื้นหลังแดงหม่น */
+  color: #ff6b6b; /* ตัวอักษรสีแดงเรือง */
+  font-weight: bold; /* ตัวหนา */
+  text-align: center; /* จัดตรงกลาง */
+  border-radius: 4px; /* มุมโค้งเล็กน้อย */
+}
+

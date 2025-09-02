@@ -1,0 +1,39 @@
+.ul {
+    list-style: none; /* เอา bullet point ของ list ออก */
+    padding: 0; 
+    width: 100%; /* ให้กว้างเต็ม container */
+    max-height: 140px; /* กำหนดความสูงสูงสุด ถ้าเกินจะมี scroll */
+    overflow-y: auto; /* เปิด scroll แนวตั้ง */
+    border-radius: 8px; 
+    border: 1px solid rgba(255, 255, 255, 0.2); /* เส้นขอบบาง โปร่งใส */
+    background: rgba(30, 30, 30, 0.8); /* พื้นหลังสีดำโปร่งใส */
+}
+
+.li {
+    display: flex; 
+    align-items: center; 
+    gap: 10px; /* ระยะห่างระหว่างไอคอนกับข้อความ */
+    padding: 8px 12px; 
+    cursor: pointer; /* แสดง pointer เวลาชี้ */
+    transition: all 0.2s ease; /* ทำ transition นุ่มๆ ตอน hover */
+    color: #fff; 
+}
+
+.li:hover {
+    background: rgba(255, 215, 0, 0.2); /* เวลา hover เปลี่ยนพื้นหลังเป็นทองอ่อน */
+}
+
+.disabled {
+    text-align: center; /* จัดข้อความตรงกลาง */
+    padding: 10px; /* เว้นระยะรอบข้อความ */
+    color: gray; /* ข้อความสีเทา */
+    cursor: not-allowed; /* เมาส์ชี้แล้วเป็นรูปห้าม */
+    pointer-events: none; /* ปิดการคลิก (disable) */
+}
+
+.icon {
+    width: 30px; /* ความกว้างของ icon */
+    height: 30px; /* ความสูงของ icon */
+    border-radius: 4px; /* มุมโค้งเล็กน้อย */
+}
+

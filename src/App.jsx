@@ -17,6 +17,7 @@ export default function HeroGuessGame() {
 
   const resetGame = () => {
     const hero = Heroes[Math.floor(Math.random() * Heroes.length)];
+    console.log(hero);
     setAnswer(hero);
     setHistory([]);
     setAvailableHeroes(Heroes);

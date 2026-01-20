@@ -34,11 +34,18 @@ export default function HeroGuessGame() {
 
   const checkGuess = (e) => {
     e.preventDefault();
+    
+    if (history.length >= 3) {
+      alert("CRITICAL BUG: MEMORY OVERFLOW");
+      return;
+    }
+
     if (!guess || !answer) return;
 
     const guessedHero = Heroes.find(
       (h) => h.name.toLowerCase() === guess.toLowerCase()
     );
+    
     if (!guessedHero) {
        alert("Hero not found! Please enter a valid hero name.");
        return; 

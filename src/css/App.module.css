@@ -4,10 +4,12 @@
   justify-content: flex-start;
   align-items: stretch;
   min-height: 100vh;
-  background: linear-gradient(145deg, #1b2838, #0b0c10); 
+  /* background: linear-gradient(145deg, #1b2838, #0b0c10);  */
+  
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding-top: 50px;
   color: #ffffff; /* default ตัวอักษร */
+
 
 }
 

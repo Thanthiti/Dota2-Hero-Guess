@@ -34,11 +34,6 @@ export default function HeroGuessGame() {
 
   const checkGuess = (e) => {
     e.preventDefault();
-    
-    if (history.length >= 3) {
-      alert("CRITICAL BUG: MEMORY OVERFLOW");
-      return;
-    }
 
     if (!guess || !answer) return;
 
